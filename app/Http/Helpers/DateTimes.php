@@ -11,6 +11,11 @@ function defaultDateTimes($date, $format = 'Y-m-d H:i:s')
     return date($format, strtotime($date));
 }
 
+function defaultDateTimesTimeZone($date, $format="Y-m-d H:i:s", $setTimezone="Asia/Bangkok"){
+    $date = date_create($date, timezone_open($setTimezone));
+    return date_format($date, $format);
+}
+
 
 function formatDateThai($strDate, $s = 0)
 {
